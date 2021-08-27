@@ -10,9 +10,14 @@ public:
         quickSort(nums,0,nums.size()-1);
         return nums;
     }
+    int randomized_partition(vector<int>& nums, int start, int end) {
+        int pivot_index = rand() % (end - start + 1) + start;
+        swap(nums[pivot_index],nums[start]);
+        return partition(nums,start,end);
+    }
     void quickSort(vector<int>& nums,int start,int end){
         if(start<end){
-            int mid=partition(nums,start,end);
+            int mid=randomized_partition(nums,start,end);
             cout<<"mid:"<<mid<<std::endl;
             quickSort(nums,start,mid-1);
             quickSort(nums,mid+1,end);
@@ -21,6 +26,7 @@ public:
     int partition(vector<int>& nums,int start,int end){
         cout<<"start:"<<start<<"end:"<<end<<std::endl;
         int pivot=nums[start];
+        cout<<"pivot:"<<pivot<<std::endl;
         while(start<end){
             while(start<end&&nums[end]>=pivot){
                 end--;
@@ -32,6 +38,10 @@ public:
             nums[end]=nums[start];
         }
         nums[start]=pivot;
+        for(int i=0;i<nums.size();i++){
+            cout<<nums[i];
+        }
+        cout<<std::endl;
         return start;
     }
 };

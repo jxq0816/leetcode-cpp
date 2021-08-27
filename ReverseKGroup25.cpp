@@ -17,7 +17,6 @@ public:
         ListNode* hair = new ListNode(0);
         hair->next = head;
         ListNode* pre = hair;
-
         while (head) {
             ListNode* tail = pre;
             // 查看剩余部分长度是否大于等于 k
@@ -38,7 +37,12 @@ public:
             pre = tail;
             head = tail->next;
         }
-
         return hair->next;
     }
 };
+int main() {
+    Solution solution;
+
+    cout<<endl;
+    return 0;
+}

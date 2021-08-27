@@ -3,4 +3,11 @@ project(leetcode)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(leetcode912 QuickSort.cpp)
+add_executable(TowSum TowSum1.cpp)
+add_executable(ReverseKGroup25 ReverseKGroup25.cpp)
+add_executable(RemoveElements27 RemoveElements27.cpp)
+add_executable(StrStr28 StrStr28.cpp)
+add_executable(Divide29 Divide29.cpp)
+add_executable(NextPermutation31 NextPermutation31.cpp)
+add_executable(trap42 trap42.cpp)
+add_executable(leetcode912 QuickSort912.cpp)

@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <string>
-#include < vector>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -26,6 +26,11 @@ public:
 
 int main() {
     Solution solution;
-    cout <<solution.nextPermutation()<<endl;
+    vector<int> nums = {1,2,3};
+    solution.nextPermutation(nums);
+    for (int i = 0; i<nums.size(); i++){
+        cout << nums[i];
+    }
+    cout<<endl;
     return 0;
 }
