@@ -2,21 +2,32 @@
 // Created by jiangxingqi on 2020/7/4.
 //
 
+#include <iostream>
+#include <vector>
+#include <map>
+using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        map<int,int> map=new HashMap<>();
-        for(i=0;i<num;i++){
-            int x=target-nums[i];
-            if(map.containsKey(x)){
-                return new int[]{map.get(x),i};
+        map<int,int> map;
+        for(int i=0;i<nums.size();i++){
+            auto it = map.find(target - nums[i]);
+            if (it != map.end()) {
+                return {it->second, i};
             }
-            map.put(nums[i],i);
+            map[nums[i]]=i;
         }
-
+        return {};
     }
 };
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Solution solution;
+    vector<int> nums= {2,7,11,15};
+    int target = 9;
+    vector<int> rs=solution.twoSum(nums,target);
+    for(int i:rs){
+        cout<<i<<",";
+    }
+    cout<<endl;
     return 0;
 }
